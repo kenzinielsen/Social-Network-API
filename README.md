@@ -9,5 +9,5 @@
 ## Technologies
 
 * MongoDB
-- Mongoose
-- Express.js
+* Mongoose
+* Express.js
