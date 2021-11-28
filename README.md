@@ -6,6 +6,7 @@ This API was built so users can express their thoughts, react to friends' though
 ## Walkthrough Video
 A walkthrough video showing GET, POST, PUT & DELETE routes for thoughts and users, also POST & DELETE routes for thought reactions and friend lists.
 
+https://watch.screencastify.com/v/JrMxtRwZDezRmHYs4SL8
 
 ## Installation
 - Install MongoDB onto your computer using https://docs.mongodb.com/manual/installation/.
