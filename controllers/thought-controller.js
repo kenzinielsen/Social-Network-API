@@ -21,7 +21,7 @@ const thoughtController = {
             path: 'reactions',
             select: '-__v'
         })
-        select('-__v')
+        .select('-__v')
         .then(dbThoughtData => {
             if (!dbThoughtData) {
                 res.status(404).josn({message: 'No thought found with this id' });
