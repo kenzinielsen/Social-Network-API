@@ -1,8 +1,8 @@
-const { Thought, User } = require('../models');
+const { Thought } = require('../models');
 
 const thoughtController = {
     getAllThought(req, res) {
-        Thought. find({})
+        Thought.find({})
         .populate({
             path: 'reactions',
             select:'-__v'
