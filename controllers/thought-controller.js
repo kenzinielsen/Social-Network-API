@@ -40,7 +40,7 @@ const thoughtController = {
         .catch(err => res.json(err));
     },
 
-    updateThought({ parmas, body }, res) {
+    updateThought({ params, body }, res) {
         Thought.findOneAndUpdate({ _id: params.id}, body, { new: true, runValidators: true })
         .then(dbThoughtData => {
             if (!dbThoughtData) {

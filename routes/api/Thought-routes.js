@@ -22,7 +22,7 @@ router
     .delete(deleteThought);
 
 router
-    .route('/api/thoughts/:thoughtId/reactions')
+    .route('/:thoughtId/reactions')
     .post(createReaction)
     .delete(deleteReaction);
 
