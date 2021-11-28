@@ -62,7 +62,32 @@ const thoughtController = {
                 res.json(dbThoughtData);
         })
             .catch(err => res.status(400).json(err))
-    }
+    },
+
+    createReaction({ params, body }, res) {
+        Reaction.create(
+            { _id: params.thoughtId },
+            { $push: { reaction: body } },
+            { new: true, runValidators: true }
+        )
+        .then(dbThoughtData => {
+            if (!dbThoughtData) {
+                res.status(404).json({ message: 'No thought found witht this id' });
+                return;
+            }
+            res.json(dbThoughtData);
+        })
+        .catch(err => res.json(err));
+    },
+    deleteReaction({ params }, res) {
+        Reaction.findOneAndUpdate(
+            { _id: params.thoughtId},
+            { $pull: { replies: { reactionId: params.reactionId } } },
+            { new: true }
+        )
+    .   then(dbThoughtData => res.json(dbThoughtData))
+        .catch(err => res.json(err));
+    },
 };
 
 module.exports = thoughtController;

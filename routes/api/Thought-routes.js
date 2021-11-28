@@ -19,12 +19,12 @@ router
     .route('/:id')
     .get(getThoughtById)
     .put(updateThought)
-    .delete(deleteThought)
+    .delete(deleteThought);
 
 router
     .route('/api/thoughts/:thoughtId/reactions')
     .post(createReaction)
-    .delete(deleteReaction)
+    .delete(deleteReaction);
 
 
 module.exports = router;
